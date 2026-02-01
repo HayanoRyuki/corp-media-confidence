@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "セミナー・イベント",
@@ -9,25 +8,25 @@ export const metadata: Metadata = {
 // サンプルデータ（将来的にCMSから取得）
 const seminars = [
   {
-    slug: "ai-basics-webinar-202602",
+    slug: "ai-basics-webinar-202601",
     title: "【オンライン】AI基盤導入の基礎知識セミナー",
-    eventDate: "2026-02-15",
+    eventDate: "2026-01-15",
     eventType: "ウェビナー",
-    status: "募集中",
+    status: "終了",
   },
   {
-    slug: "marketing-ai-workshop-202602",
+    slug: "marketing-ai-workshop-202601",
     title: "【ハンズオン】マーケティングAI活用ワークショップ",
-    eventDate: "2026-02-28",
+    eventDate: "2026-01-22",
     eventType: "ウェビナー",
-    status: "募集中",
+    status: "終了",
   },
   {
     slug: "cs-ai-case-study-202601",
     title: "カスタマーサポートAI導入事例紹介セミナー",
-    eventDate: "2026-01-25",
+    eventDate: "2026-01-29",
     eventType: "ウェビナー",
-    status: "アーカイブ公開中",
+    status: "終了",
   },
 ];
 
@@ -57,10 +56,9 @@ export default function SeminarListPage() {
         <div className="container-wide">
           <div className="space-y-6">
             {seminars.map((item) => (
-              <Link
+              <div
                 key={item.slug}
-                href={`/seminar/${item.slug}`}
-                className="block bg-white border border-gray-border rounded-lg p-6 hover:shadow-lg transition-shadow"
+                className="block bg-white border border-gray-border rounded-lg p-6"
               >
                 <div className="flex flex-wrap items-center gap-3 mb-3">
                   <span className={`text-xs px-3 py-1 rounded-full ${statusColors[item.status]}`}>
@@ -71,10 +69,10 @@ export default function SeminarListPage() {
                   </span>
                   <time className="text-sm text-text-light">{item.eventDate}</time>
                 </div>
-                <h2 className="text-lg font-bold text-text hover:text-primary transition-colors">
+                <h2 className="text-lg font-bold text-text">
                   {item.title}
                 </h2>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

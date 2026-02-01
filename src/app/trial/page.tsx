@@ -124,7 +124,7 @@ export default function TrialPage() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold">✓</span>
-                <span className="text-text-light">法人登録が必要です（個人事業主も可）</span>
+                <span className="text-text-light">法人登録が必要です</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold">✓</span>
