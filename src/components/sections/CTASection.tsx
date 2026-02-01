@@ -12,18 +12,12 @@ export function CTASection() {
           <br />
           いきなり導入を検討する必要はありません。まずは、どんな使い方があるのか見てみてください。
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <Link
-            href="/trial"
+            href="/resources/overview"
             className="inline-flex items-center justify-center px-8 py-3 bg-white text-secondary font-medium rounded-lg hover:bg-gray-100 transition-colors"
           >
-            無料で始める
-          </Link>
-          <Link
-            href="/resources"
-            className="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white/10 transition-colors"
-          >
-            資料一覧を見る
+            資料請求
           </Link>
         </div>
       </div>

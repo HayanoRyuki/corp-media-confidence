@@ -44,8 +44,6 @@ export default async function ProductPage({ params }: Props) {
     .map((slug) => Object.values(products).find((p) => p.slug === slug))
     .filter((p): p is ProductDetail => p !== undefined);
 
-  const PLATFORM_URL = process.env.NEXT_PUBLIC_PLATFORM_URL || "https://platform.media-confidence.com";
-
   return (
     <>
       {/* ヒーロー */}
@@ -75,15 +73,7 @@ export default async function ProductPage({ params }: Props) {
 
           {/* CTA */}
           <div className="flex flex-wrap gap-4 mt-8">
-            <a
-              href={PLATFORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
-              無料で始める
-            </a>
-            <Link href="/request" className="btn-outline border-white text-white hover:bg-white hover:text-secondary">
+            <Link href="/resources/overview" className="btn-primary">
               資料請求
             </Link>
           </div>
