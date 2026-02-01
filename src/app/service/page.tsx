@@ -129,7 +129,7 @@ export default function ServicePage() {
             <Link href="/contact" className="btn-primary">
               お問い合わせ
             </Link>
-            <Link href="/request" className="btn-outline-white">
+            <Link href="/request" className="btn-outline border-white text-white hover:bg-white hover:text-secondary">
               資料請求
             </Link>
           </div>
