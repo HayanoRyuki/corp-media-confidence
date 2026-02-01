@@ -44,7 +44,7 @@ export function Header() {
 
         {/* CTA ボタン */}
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/request" className="btn-outline text-sm py-2 px-4">
+          <Link href="/resources/overview" className="btn-outline text-sm py-2 px-4">
             資料請求
           </Link>
           <Link href="/trial" className="btn-primary text-sm py-2 px-4">
@@ -98,7 +98,7 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-4 space-y-2">
-              <Link href="/request" className="btn-outline w-full text-center block">
+              <Link href="/resources/overview" className="btn-outline w-full text-center block">
                 資料請求
               </Link>
               <Link href="/trial" className="btn-primary w-full text-center block">
