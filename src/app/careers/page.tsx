@@ -3,30 +3,17 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "採用情報",
-  description: "株式会社メディア・コンフィデンスの採用情報。正社員・業務委託を募集しています。",
+  description: "株式会社メディア・コンフィデンスの採用情報。業務委託メンバーを募集しています。",
 };
 
-// サンプルデータ（将来的にCMSから取得）
+// 業務委託ポジション
 const careers = [
-  {
-    slug: "ai-engineer",
-    title: "AIエンジニア",
-    employmentType: "正社員",
-    location: "東京（リモート可）",
-    status: "募集中",
-  },
-  {
-    slug: "frontend-engineer",
-    title: "フロントエンドエンジニア",
-    employmentType: "正社員",
-    location: "東京（リモート可）",
-    status: "募集中",
-  },
   {
     slug: "project-manager",
     title: "プロジェクトマネージャー",
     employmentType: "業務委託",
     location: "フルリモート",
+    workStyle: "週2日〜",
     status: "募集中",
   },
 ];
@@ -78,6 +65,9 @@ export default function CareersListPage() {
                   </span>
                   <span className="text-xs text-text-light">
                     {item.location}
+                  </span>
+                  <span className="text-xs text-text-light">
+                    {item.workStyle}
                   </span>
                 </div>
                 <h3 className="text-lg font-bold text-text">{item.title}</h3>
