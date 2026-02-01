@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   products: {
@@ -63,6 +64,13 @@ export function Footer() {
         {/* コンタクト */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-t border-white/20 pt-8">
           <div>
+            <Image
+              src="/images/logo-white.png"
+              alt="Media-Confidence"
+              width={200}
+              height={40}
+              className="h-8 w-auto mb-3"
+            />
             <p className="font-bold text-lg">株式会社メディア・コンフィデンス</p>
             <p className="text-white/80 text-sm mt-1">
               〒150-0043 東京都渋谷区道玄坂1丁目10番8号 渋谷道玄坂東急ビル2F-C

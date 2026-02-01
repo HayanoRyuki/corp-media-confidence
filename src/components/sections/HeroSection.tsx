@@ -1,21 +1,35 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const PLATFORM_URL = process.env.NEXT_PUBLIC_PLATFORM_URL || "https://platform.media-confidence.com";
 
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-gray-bg to-white py-20 md:py-32">
+    <section className="relative min-h-[600px] md:min-h-[700px] flex items-center">
+      {/* 背景画像 */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/hero-pc.webp"
+          alt=""
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* オーバーレイ */}
+        <div className="absolute inset-0 bg-secondary/70" />
+      </div>
+
       <div className="container-wide">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl">
           {/* メインコピー */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text leading-tight mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-6">
             その業務、AI基盤で
             <br />
-            <span className="text-primary">「すぐ」</span>変えてみせます。
+            <span className="text-primary-light">「すぐ」</span>変えてみせます。
           </h1>
 
           {/* サブコピー */}
-          <p className="text-lg md:text-xl text-text-light mb-8 leading-relaxed">
+          <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
             7部署×3方向で選べる21種類のAIプロダクト。
             <br />
             業種別の導入パターンもあります。
@@ -24,26 +38,20 @@ export function HeroSection() {
           </p>
 
           {/* CTA ボタン */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/product-list" className="btn-outline">
-              プロダクトについて
-            </Link>
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={PLATFORM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-primary text-lg py-4 px-8"
             >
               無料で始める
             </a>
+            <Link href="/product-list" className="btn-outline border-white text-white hover:bg-white hover:text-secondary">
+              プロダクトについて
+            </Link>
           </div>
         </div>
-      </div>
-
-      {/* 背景装飾（オプション） */}
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        <div className="absolute -top-1/2 -right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute -bottom-1/4 -left-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl" />
       </div>
     </section>
   );

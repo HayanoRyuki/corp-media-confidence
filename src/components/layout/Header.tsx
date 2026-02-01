@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const PLATFORM_URL = process.env.NEXT_PUBLIC_PLATFORM_URL || "https://platform.media-confidence.com";
@@ -18,8 +19,15 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-white border-b border-gray-border">
       <nav className="container-wide flex items-center justify-between py-4">
         {/* ロゴ */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-xl font-bold text-primary">Media-Confidence</span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.svg"
+            alt="Media-Confidence"
+            width={200}
+            height={40}
+            className="h-8 w-auto"
+            priority
+          />
         </Link>
 
         {/* デスクトップナビゲーション */}
