@@ -19,7 +19,7 @@ export function SolutionsSection() {
         <div className="text-center mb-12">
           <p className="text-primary font-medium mb-2">SOLUTIONS</p>
           <h2 className="text-2xl md:text-3xl font-bold text-text mb-4">
-            7つの部署や、目的別に、最適なソリューションを提供しています。
+            部署や目的別に、最適なソリューションを提供。
           </h2>
         </div>
 
