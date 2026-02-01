@@ -1,26 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { FileText, Users, Video } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "無料で始める",
-  description: "メディアプラットフォームに無料登録して、AIプロダクトをすぐにお試しいただけます。",
+  title: "無料で始める | MCメディアプラットフォーム",
+  description: "MCメディアプラットフォームは、CMS・社員肖像管理・セミナー配信管理を無料でご利用いただける法人向けツールです。",
 };
 
 const PLATFORM_URL = process.env.NEXT_PUBLIC_PLATFORM_URL || "https://platform.media-confidence.com";
 
 const features = [
   {
-    title: "すぐに使える",
-    description: "登録後すぐにAIプロダクトをお試しいただけます。セットアップ不要で、すぐに業務効率化を体験できます。",
+    icon: <FileText className="w-8 h-8 text-primary" />,
+    title: "CMS",
+    description: "ブログ・お知らせ・コラムなど、Webサイトのコンテンツ管理を簡単に。AI支援で記事作成も効率化できます。",
   },
   {
-    title: "21種類のAIプロダクト",
-    description: "7部署×3方向の21種類のAIプロダクトから、御社の課題に最適なものをお選びいただけます。",
+    icon: <Users className="w-8 h-8 text-primary" />,
+    title: "社員肖像管理",
+    description: "社員の写真・プロフィールを一元管理。採用サイトやチームページの更新がスムーズになります。",
   },
   {
-    title: "専門家によるサポート",
-    description: "導入から運用まで、AIの専門家がサポート。不明点はいつでもご相談いただけます。",
+    icon: <Video className="w-8 h-8 text-primary" />,
+    title: "セミナー配信管理",
+    description: "セミナー・ウェビナーの告知から申込管理、アーカイブ配信まで一括で管理できます。",
   },
 ];
 
@@ -41,13 +45,16 @@ export default function TrialPage() {
         </div>
 
         <div className="container-wide text-center">
+          <p className="text-primary-light font-medium mb-4">MC MEDIA PLATFORM</p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            無料で始める
+            MCメディアプラットフォーム
           </h1>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            メディアプラットフォームに無料登録して、
+            法人登録で、すぐに無料で使えます。
             <br />
-            AIプロダクトをすぐにお試しください。
+            CMS・社員肖像管理・セミナー配信管理を
+            <br className="hidden md:block" />
+            ひとつのプラットフォームで。
           </p>
           <a
             href={PLATFORM_URL}
@@ -55,24 +62,30 @@ export default function TrialPage() {
             rel="noopener noreferrer"
             className="btn-primary text-lg py-4 px-12 inline-block"
           >
-            無料登録はこちら
+            無料で始める
           </a>
         </div>
       </section>
 
-      {/* 特徴 */}
+      {/* 機能紹介 */}
       <section className="section">
         <div className="container-wide">
-          <h2 className="text-2xl font-bold text-text text-center mb-12">
-            メディアプラットフォームの特徴
-          </h2>
+          <div className="text-center mb-12">
+            <p className="text-primary font-medium mb-2">FEATURES</p>
+            <h2 className="text-2xl md:text-3xl font-bold text-text mb-4">
+              3つの機能を無料で提供
+            </h2>
+            <p className="text-text-light">
+              今後も機能を追加予定。法人のメディア運営をトータルでサポートします。
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, i) => (
-              <div key={i} className="text-center">
+              <div key={i} className="bg-white border border-gray-border rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary">{i + 1}</span>
+                  {feature.icon}
                 </div>
-                <h3 className="text-lg font-bold text-text mb-3">{feature.title}</h3>
+                <h3 className="text-xl font-bold text-text mb-3">{feature.title}</h3>
                 <p className="text-text-light">{feature.description}</p>
               </div>
             ))}
@@ -80,8 +93,37 @@ export default function TrialPage() {
         </div>
       </section>
 
-      {/* 利用の流れ */}
+      {/* 無料利用の条件 */}
       <section className="section bg-gray-bg">
+        <div className="container-narrow">
+          <h2 className="text-2xl font-bold text-text text-center mb-8">
+            無料利用について
+          </h2>
+          <div className="bg-white rounded-lg p-8">
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold">✓</span>
+                <span className="text-text-light">法人登録が必要です（個人事業主も可）</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold">✓</span>
+                <span className="text-text-light">基本機能は無料でご利用いただけます</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold">✓</span>
+                <span className="text-text-light">一部の拡張機能・大容量利用は有料プランをご用意</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary font-bold">✓</span>
+                <span className="text-text-light">クレジットカード登録不要で始められます</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* 利用の流れ */}
+      <section className="section">
         <div className="container-wide">
           <h2 className="text-2xl font-bold text-text text-center mb-12">
             ご利用の流れ
@@ -93,8 +135,8 @@ export default function TrialPage() {
                   1
                 </div>
                 <div>
-                  <h3 className="font-bold text-text mb-2">無料登録</h3>
-                  <p className="text-text-light">メールアドレスで簡単登録。クレジットカードは不要です。</p>
+                  <h3 className="font-bold text-text mb-2">法人登録</h3>
+                  <p className="text-text-light">会社名・メールアドレスで簡単登録。審査後、すぐにご利用いただけます。</p>
                 </div>
               </div>
               <div className="flex gap-6 items-start">
@@ -102,8 +144,8 @@ export default function TrialPage() {
                   2
                 </div>
                 <div>
-                  <h3 className="font-bold text-text mb-2">プロダクト選択</h3>
-                  <p className="text-text-light">21種類のAIプロダクトから、御社の課題に合ったものを選択します。</p>
+                  <h3 className="font-bold text-text mb-2">機能を選択</h3>
+                  <p className="text-text-light">CMS・社員肖像管理・セミナー配信管理から、必要な機能を有効化します。</p>
                 </div>
               </div>
               <div className="flex gap-6 items-start">
@@ -112,7 +154,7 @@ export default function TrialPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-text mb-2">すぐに利用開始</h3>
-                  <p className="text-text-light">セットアップ不要で、すぐにAIプロダクトをお試しいただけます。</p>
+                  <p className="text-text-light">直感的なUIで、すぐにコンテンツ管理を始められます。</p>
                 </div>
               </div>
             </div>
@@ -127,7 +169,7 @@ export default function TrialPage() {
             今すぐ無料で始めましょう
           </h2>
           <p className="text-white/80 mb-8">
-            登録は1分で完了。クレジットカードは不要です。
+            法人登録は数分で完了。クレジットカードは不要です。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -136,7 +178,7 @@ export default function TrialPage() {
               rel="noopener noreferrer"
               className="btn-primary text-lg py-4 px-8"
             >
-              無料登録はこちら
+              無料で始める
             </a>
             <Link
               href="/contact"
