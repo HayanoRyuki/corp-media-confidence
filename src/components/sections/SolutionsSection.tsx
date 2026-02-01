@@ -29,19 +29,19 @@ export function SolutionsSection() {
               </p>
               <div className="flex gap-2">
                 <Link
-                  href={`/product-list?department=${dept.slug}&direction=external`}
+                  href={`/products/${dept.slug}-external`}
                   className="text-sm bg-secondary text-white px-4 py-2 rounded hover:bg-secondary-dark transition-colors"
                 >
                   社外向け
                 </Link>
                 <Link
-                  href={`/product-list?department=${dept.slug}&direction=customer`}
+                  href={`/products/${dept.slug}-customer`}
                   className="text-sm bg-secondary text-white px-4 py-2 rounded hover:bg-secondary-dark transition-colors"
                 >
                   顧客向け
                 </Link>
                 <Link
-                  href={`/product-list?department=${dept.slug}&direction=internal`}
+                  href={`/products/${dept.slug}-internal`}
                   className="text-sm bg-secondary text-white px-4 py-2 rounded hover:bg-secondary-dark transition-colors"
                 >
                   社内向け
