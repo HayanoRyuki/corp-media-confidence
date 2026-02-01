@@ -37,6 +37,7 @@ export function SolutionsSection() {
                   fill
                   className="object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/60 to-primary/40" />
               </div>
               <div className="p-6">
               <p className="text-sm text-primary font-medium uppercase mb-1">
