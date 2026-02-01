@@ -30,20 +30,22 @@ export function SolutionsSection() {
               key={dept.id}
               className="bg-white border border-gray-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <div className="aspect-[16/9] relative">
+              <div className="aspect-[4/3] relative">
                 <Image
                   src={departmentImages[dept.id] || "/images/genre1.jpg"}
                   alt={dept.name}
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/60 to-primary/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4">
+                  <p className="text-xs text-white/80 font-medium uppercase mb-1">
+                    {dept.nameEn}
+                  </p>
+                  <h3 className="text-xl font-bold text-white">{dept.name}</h3>
+                </div>
               </div>
-              <div className="p-6">
-              <p className="text-sm text-primary font-medium uppercase mb-1">
-                {dept.nameEn}
-              </p>
-              <h3 className="text-xl font-bold text-text mb-3">{dept.name}</h3>
+              <div className="p-4">
               <p className="text-text-light text-sm mb-4">
                 {getDepartmentDescription(dept.id)}
               </p>
