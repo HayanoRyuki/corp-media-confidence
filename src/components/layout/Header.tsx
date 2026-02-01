@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 const navigation = [
+  { name: "事業内容", href: "/service" },
   { name: "プロダクト", href: "/product-list" },
   { name: "業種別", href: "/industry" },
   { name: "会社概要", href: "/company" },

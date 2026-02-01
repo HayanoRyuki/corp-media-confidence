@@ -12,6 +12,7 @@ const footerLinks = {
   company: {
     title: "会社情報",
     links: [
+      { name: "事業内容", href: "/service" },
       { name: "会社概要", href: "/company" },
       { name: "チーム", href: "/team" },
       { name: "採用情報", href: "/careers" },
