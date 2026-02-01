@@ -65,3 +65,24 @@
     text-wrap: balance;
   }
 }
+
+/* 法務ページ用スタイル（プライバシーポリシー・利用規約） */
+.legal-content h2 {
+  @apply text-xl font-bold text-text mt-10 mb-4 pb-2 border-b border-gray-border;
+}
+
+.legal-content p {
+  @apply text-text-light leading-relaxed mb-4;
+}
+
+.legal-content ul {
+  @apply list-disc list-inside mb-6 space-y-2 text-text-light ml-4;
+}
+
+.legal-content li {
+  @apply leading-relaxed;
+}
+
+.legal-content a {
+  @apply text-primary hover:underline;
+}

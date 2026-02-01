@@ -17,7 +17,7 @@ export default function TermsPage() {
 
       {/* 本文 */}
       <section className="section">
-        <div className="container-narrow prose prose-lg max-w-none">
+        <div className="container-narrow legal-content">
           <p className="text-text-light">最終更新日: 2026年2月1日</p>
 
           <h2>第1条（適用）</h2>
