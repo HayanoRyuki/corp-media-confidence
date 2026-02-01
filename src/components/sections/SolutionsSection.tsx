@@ -49,7 +49,7 @@ export function SolutionsSection() {
               <p className="text-text-light text-sm mb-4">
                 {getDepartmentDescription(dept.id)}
               </p>
-              <div className="flex gap-2">
+              <div className="flex gap-2 justify-center">
                 <Link
                   href={`/products/${dept.slug}-external`}
                   className="text-sm bg-secondary text-white px-4 py-2 rounded hover:bg-secondary-dark transition-colors"
