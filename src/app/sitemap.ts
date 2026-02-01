@@ -69,12 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 一覧ページ
   const listPages: MetadataRoute.Sitemap = [
     {
-      url: `${BASE_URL}/products`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
       url: `${BASE_URL}/news`,
       lastModified: currentDate,
       changeFrequency: "daily",
