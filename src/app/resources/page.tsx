@@ -55,12 +55,12 @@ export default function ResourcesPage() {
                 key={item.slug}
                 className="bg-white border border-gray-border rounded-lg overflow-hidden"
               >
-                <div className="aspect-[4/3] relative bg-gray-100">
+                <div className="aspect-video relative bg-gray-100">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                   />
                 </div>
                 <div className="p-6">
