@@ -2,9 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 
 const footerLinks = {
-  products: {
-    title: "プロダクト",
+  service: {
+    title: "サービス",
     links: [
+      { name: "事業内容", href: "/service" },
       { name: "プロダクト一覧", href: "/product-list" },
       { name: "業種別ソリューション", href: "/industry" },
     ],
@@ -12,7 +13,6 @@ const footerLinks = {
   company: {
     title: "会社情報",
     links: [
-      { name: "事業内容", href: "/service" },
       { name: "会社概要", href: "/company" },
       { name: "チーム", href: "/team" },
       { name: "採用情報", href: "/careers" },
@@ -20,7 +20,7 @@ const footerLinks = {
     ],
   },
   resources: {
-    title: "リソース",
+    title: "お役立ち情報",
     links: [
       { name: "導入実績", href: "/case-studies" },
       { name: "コラム", href: "/column" },
@@ -29,10 +29,11 @@ const footerLinks = {
     ],
   },
   legal: {
-    title: "法務",
+    title: "その他",
     links: [
       { name: "利用規約", href: "/terms" },
       { name: "プライバシーポリシー", href: "/privacy" },
+      { name: "お問い合わせ", href: "/contact" },
     ],
   },
 };
