@@ -1,32 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { news } from "@/data/news";
 
 export const metadata: Metadata = {
   title: "ニュース",
-  description: "株式会社メディア・コンフィデンスからのお知らせ、プレスリリース、メディア掲載情報",
+  description: "株式会社メディア・コンフィデンスからのお知らせ、プレスリリース",
 };
-
-// サンプルデータ（将来的にCMSから取得）
-const news = [
-  {
-    slug: "2026-02-01-corporate-site-renewal",
-    title: "コーポレートサイトをリニューアルしました",
-    date: "2026-02-01",
-    category: "お知らせ",
-  },
-  {
-    slug: "2026-01-15-new-product-launch",
-    title: "新プロダクト「マーケティング分析AI」をリリースしました",
-    date: "2026-01-15",
-    category: "プレスリリース",
-  },
-  {
-    slug: "2026-01-10-media-coverage",
-    title: "日経新聞にAI活用事例として掲載されました",
-    date: "2026-01-10",
-    category: "メディア掲載",
-  },
-];
 
 export default function NewsListPage() {
   return (
