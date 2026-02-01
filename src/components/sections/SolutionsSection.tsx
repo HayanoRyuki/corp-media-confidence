@@ -1,5 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 import { departments } from "@/data/products";
+
+const departmentImages: Record<string, string> = {
+  marketing: "/images/genre1.jpg",
+  design: "/images/genre2.jpg",
+  sales: "/images/genre3.jpg",
+  cs: "/images/genre8.jpg",
+  hr: "/images/genre4.jpg",
+  education: "/images/genre5.jpg",
+};
 
 export function SolutionsSection() {
   return (
@@ -18,8 +28,17 @@ export function SolutionsSection() {
           {departments.slice(0, 6).map((dept) => (
             <div
               key={dept.id}
-              className="bg-white border border-gray-border rounded-lg p-6 hover:shadow-lg transition-shadow"
+              className="bg-white border border-gray-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
             >
+              <div className="aspect-[16/9] relative">
+                <Image
+                  src={departmentImages[dept.id] || "/images/genre1.jpg"}
+                  alt={dept.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
               <p className="text-sm text-primary font-medium uppercase mb-1">
                 {dept.nameEn}
               </p>
@@ -46,6 +65,7 @@ export function SolutionsSection() {
                 >
                   社内向け
                 </Link>
+              </div>
               </div>
             </div>
           ))}
