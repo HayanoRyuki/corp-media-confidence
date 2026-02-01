@@ -2,18 +2,26 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { industries } from "@/data/industries";
 import { CTASection } from "@/components/sections/CTASection";
+import {
+  BarChart3,
+  GraduationCap,
+  Monitor,
+  Handshake,
+  Scale,
+  Building2,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "業種別ソリューション",
   description: "無形商材を扱うビジネスには、共通する課題があります。業種ごとに最適なプロダクトの組み合わせをご提案します。",
 };
 
-const industryIcons: Record<string, string> = {
-  consulting: "📊",
-  training: "🎓",
-  saas: "💻",
-  agency: "🤝",
-  professional: "⚖️",
+const industryIcons: Record<string, React.ReactNode> = {
+  consulting: <BarChart3 className="w-10 h-10 text-primary" />,
+  training: <GraduationCap className="w-10 h-10 text-primary" />,
+  saas: <Monitor className="w-10 h-10 text-primary" />,
+  agency: <Handshake className="w-10 h-10 text-primary" />,
+  professional: <Scale className="w-10 h-10 text-primary" />,
 };
 
 export default function IndustryListPage() {
@@ -42,7 +50,7 @@ export default function IndustryListPage() {
                 href={`/industry/${industry.slug}`}
                 className="group block bg-white border border-gray-border rounded-lg p-8 hover:shadow-lg transition-all hover:border-primary"
               >
-                <div className="text-4xl mb-4">{industryIcons[industry.slug] || "🏢"}</div>
+                <div className="mb-4">{industryIcons[industry.slug] || <Building2 className="w-10 h-10 text-primary" />}</div>
                 <h2 className="text-xl font-bold text-text group-hover:text-primary transition-colors mb-2">
                   {industry.name}
                 </h2>
