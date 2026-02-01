@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { FileText, Users, Video } from "lucide-react";
+import { FileText, Users, Video, Plus } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "無料で始める | MCメディアプラットフォーム",
@@ -15,16 +15,25 @@ const features = [
     icon: <FileText className="w-8 h-8 text-primary" />,
     title: "CMS",
     description: "ブログ・お知らせ・コラムなど、Webサイトのコンテンツ管理を簡単に。AI支援で記事作成も効率化できます。",
+    comingSoon: false,
   },
   {
     icon: <Users className="w-8 h-8 text-primary" />,
     title: "社員肖像管理",
     description: "社員の写真・プロフィールを一元管理。採用サイトやチームページの更新がスムーズになります。",
+    comingSoon: false,
   },
   {
     icon: <Video className="w-8 h-8 text-primary" />,
     title: "セミナー配信管理",
     description: "セミナー・ウェビナーの告知から申込管理、アーカイブ配信まで一括で管理できます。",
+    comingSoon: false,
+  },
+  {
+    icon: <Plus className="w-8 h-8 text-gray-400" />,
+    title: "Coming Soon",
+    description: "新機能を準備中です。ご期待ください。",
+    comingSoon: true,
   },
 ];
 
@@ -50,11 +59,9 @@ export default function TrialPage() {
             MCメディアプラットフォーム
           </h1>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            法人登録で、すぐに無料で使えます。
+            無料で使ってわかる、業務AIの価値。
             <br />
-            CMS・社員肖像管理・セミナー配信管理を
-            <br className="hidden md:block" />
-            ひとつのプラットフォームで。
+            ぜひ、試してください。
           </p>
           <a
             href={PLATFORM_URL}
@@ -73,20 +80,31 @@ export default function TrialPage() {
           <div className="text-center mb-12">
             <p className="text-primary font-medium mb-2">FEATURES</p>
             <h2 className="text-2xl md:text-3xl font-bold text-text mb-4">
-              3つの機能を無料で提供
+              現場に即役立つ機能を無料提供
             </h2>
             <p className="text-text-light">
-              今後も機能を追加予定。法人のメディア運営をトータルでサポートします。
+              法人のメディア運営をトータルでサポートします。
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {features.map((feature, i) => (
-              <div key={i} className="bg-white border border-gray-border rounded-lg p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div
+                key={i}
+                className={`bg-white border rounded-lg p-8 text-center transition-shadow ${
+                  feature.comingSoon
+                    ? "border-dashed border-gray-300 bg-gray-50"
+                    : "border-gray-border hover:shadow-lg"
+                }`}
+              >
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 ${
+                  feature.comingSoon ? "bg-gray-100" : "bg-primary/10"
+                }`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold text-text mb-3">{feature.title}</h3>
-                <p className="text-text-light">{feature.description}</p>
+                <h3 className={`text-xl font-bold mb-3 ${
+                  feature.comingSoon ? "text-gray-400" : "text-text"
+                }`}>{feature.title}</h3>
+                <p className={feature.comingSoon ? "text-gray-400" : "text-text-light"}>{feature.description}</p>
               </div>
             ))}
           </div>
