@@ -4,8 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-const PLATFORM_URL = process.env.NEXT_PUBLIC_PLATFORM_URL || "https://platform.media-confidence.com";
-
 const navigation = [
   { name: "プロダクト", href: "/product-list" },
   { name: "業種別", href: "/industry" },
@@ -48,14 +46,9 @@ export function Header() {
           <Link href="/request" className="btn-outline text-sm py-2 px-4">
             資料請求
           </Link>
-          <a
-            href={PLATFORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-sm py-2 px-4"
-          >
+          <Link href="/trial" className="btn-primary text-sm py-2 px-4">
             無料で始める
-          </a>
+          </Link>
         </div>
 
         {/* モバイルメニューボタン */}
@@ -107,14 +100,9 @@ export function Header() {
               <Link href="/request" className="btn-outline w-full text-center block">
                 資料請求
               </Link>
-              <a
-                href={PLATFORM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary w-full text-center block"
-              >
+              <Link href="/trial" className="btn-primary w-full text-center block">
                 無料で始める
-              </a>
+              </Link>
             </div>
           </div>
         </div>

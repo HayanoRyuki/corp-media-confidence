@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const PLATFORM_URL = process.env.NEXT_PUBLIC_PLATFORM_URL || "https://platform.media-confidence.com";
-
 export function HeroSection() {
   return (
     <section className="relative min-h-[600px] md:min-h-[700px] flex items-center">
@@ -39,14 +37,9 @@ export function HeroSection() {
 
           {/* CTA ボタン */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href={PLATFORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-lg py-4 px-8"
-            >
+            <Link href="/trial" className="btn-primary text-lg py-4 px-8">
               無料で始める
-            </a>
+            </Link>
             <Link href="/product-list" className="btn-outline border-white text-white hover:bg-white hover:text-secondary">
               プロダクトについて
             </Link>
