@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FileText, Users, Video, Plus } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "無料で始める | MCメディアプラットフォーム",
+  title: "無料トライアル | MCメディアプラットフォーム",
   description: "MCメディアプラットフォームは、CMS・社員肖像管理・セミナー配信管理を無料でご利用いただける法人向けツールです。",
 };
 
@@ -58,10 +58,13 @@ export default function TrialPage() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             MCメディアプラットフォーム
           </h1>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            無料で使ってわかる、業務AIの価値。
-            <br />
-            ぜひ、試してください。
+          <p className="text-lg text-white/80 mb-4 max-w-2xl mx-auto">
+            「さくっとAIシステムを試してみたい」そんな声をもとに、
+            <br className="hidden md:block" />
+            "試しやすい"業務範囲で無料ツールを提供しています。利用は原則無料。
+          </p>
+          <p className="text-xl text-white font-medium mb-8 max-w-2xl mx-auto">
+            無料で使ってわかる、業務AIの価値。ぜひ、試してください。
           </p>
           <a
             href={PLATFORM_URL}
