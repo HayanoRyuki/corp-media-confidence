@@ -3,7 +3,7 @@ import { products } from "@/data/products";
 import { news } from "@/data/news";
 import { industries } from "@/data/industries";
 
-const BASE_URL = "https://www.media-confidence.com";
+const BASE_URL = "https://media-confidence.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();
