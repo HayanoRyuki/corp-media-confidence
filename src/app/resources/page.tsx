@@ -70,7 +70,7 @@ export default function ResourcesPage() {
                   <h2 className="font-bold text-text mt-3 mb-2">{item.title}</h2>
                   <p className="text-sm text-text-light mb-4">{item.description}</p>
                   <Link
-                    href="/request"
+                    href={`/resources/${item.slug}`}
                     className="btn-secondary w-full text-center text-sm"
                   >
                     ダウンロード
