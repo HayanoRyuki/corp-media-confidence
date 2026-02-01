@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { columns } from "@/data/columns";
 
 export const metadata: Metadata = {
   title: "コラム",
@@ -19,11 +21,30 @@ export default function ColumnListPage() {
         </div>
       </section>
 
-      {/* 準備中 */}
+      {/* コラム一覧 */}
       <section className="section">
-        <div className="container-wide">
-          <div className="text-center py-16">
-            <p className="text-text-light text-lg">準備中</p>
+        <div className="container-narrow">
+          <div className="space-y-8">
+            {columns.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/column/${article.slug}`}
+                className="block border-b border-gray-border pb-8 hover:opacity-80 transition-opacity"
+              >
+                <div className="flex items-center gap-4 mb-3">
+                  <time className="text-sm text-text-light">{article.date}</time>
+                  <span className="text-sm text-text-light">
+                    {article.author}
+                  </span>
+                </div>
+                <h2 className="text-xl font-bold text-text hover:text-primary transition-colors mb-3">
+                  {article.title}
+                </h2>
+                <p className="text-text-light leading-relaxed">
+                  {article.summary}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
