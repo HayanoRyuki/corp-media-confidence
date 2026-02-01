@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 const GTM_ID = "GTM-M9GXZXKR";
+const HUBSPOT_ID = "21612534";
 
 export const metadata: Metadata = {
   title: {
@@ -47,6 +48,12 @@ export default function RootLayout({
               })(window,document,'script','dataLayer','${GTM_ID}');
             `,
           }}
+        />
+        {/* HubSpot Tracking Code */}
+        <Script
+          id="hs-script-loader"
+          strategy="afterInteractive"
+          src={`//js-na2.hs-scripts.com/${HUBSPOT_ID}.js`}
         />
       </head>
       <body className="flex flex-col min-h-screen">
