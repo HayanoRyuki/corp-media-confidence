@@ -56,7 +56,7 @@ export default function TrialPage() {
         <div className="container-wide text-center">
           <p className="text-primary-light font-medium mb-4">MC MEDIA PLATFORM</p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-            MCメディアプラットフォーム
+            無料トライアル
           </h1>
           <p className="text-lg text-white/80 mb-4 max-w-2xl mx-auto">
             「さくっとAIシステムを試してみたい」そんな声をもとに、
