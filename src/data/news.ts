@@ -76,13 +76,6 @@ export const news: NewsArticle[] = [
 ## お問い合わせ
 
 プロダクトの詳細やデモのご依頼は、お問い合わせフォームよりご連絡ください。
-
----
-
-**本件に関するお問い合わせ先**
-
-株式会社メディア・コンフィデンス 広報担当
-Email: pr@media-confidence.com
     `.trim(),
   },
 ];

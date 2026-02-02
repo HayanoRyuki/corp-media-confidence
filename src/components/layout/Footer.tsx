@@ -22,7 +22,6 @@ const footerLinks = {
   resources: {
     title: "お役立ち情報",
     links: [
-      { name: "導入実績", href: "/case-studies" },
       { name: "コラム", href: "/column" },
       { name: "セミナー", href: "/seminar" },
       { name: "資料一覧", href: "/resources" },
