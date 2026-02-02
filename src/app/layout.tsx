@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  preload: true,
+});
 
 const GTM_ID = "GTM-M9GXZXKR";
 const HUBSPOT_ID = "21612534";
@@ -56,7 +64,7 @@ export default function RootLayout({
           src={`//js-na2.hs-scripts.com/${HUBSPOT_ID}.js`}
         />
       </head>
-      <body className="flex flex-col min-h-screen">
+      <body className={`${notoSansJP.className} flex flex-col min-h-screen`}>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

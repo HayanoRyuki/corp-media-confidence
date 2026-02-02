@@ -35,6 +35,7 @@ export function SolutionsSection() {
                   src={departmentImages[dept.id] || "/images/genre1.jpg"}
                   alt={dept.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent" />
