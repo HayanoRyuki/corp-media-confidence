@@ -9,6 +9,7 @@ const navigation = [
   { name: "プロダクト", href: "/product-list" },
   { name: "業種別", href: "/industry" },
   { name: "会社概要", href: "/company" },
+  { name: "企業理念", href: "/philosophy" },
 ];
 
 export function Header() {
