@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { X } from "lucide-react";
+import { X, Rocket } from "lucide-react";
 
 type Props = {
   children: React.ReactNode;
@@ -48,7 +48,7 @@ export function PlatformComingSoonButton({ children, className }: Props) {
             {/* コンテンツ */}
             <div className="text-center">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-3xl">🚀</span>
+                <Rocket className="w-8 h-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-text mb-4">
                 開発中です
