@@ -51,17 +51,10 @@ export default function RootLayout({
           as="image"
           type="image/webp"
         />
-        {/* クリティカルCSS - 初期表示に必要な最小限のスタイル */}
+        {/* クリティカルCSS - 初期表示に必要な最小限のスタイル（Tailwindと競合しないよう最小限に） */}
         <style dangerouslySetInnerHTML={{ __html: `
           *,*::before,*::after{box-sizing:border-box}
-          body{margin:0;font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.75;color:#1f2933;background:#fff;display:flex;flex-direction:column;min-height:100vh}
-          .container-wide{max-width:80rem;margin:0 auto;padding:0 1rem}
-          header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e5e7eb}
-          header nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-          .btn-primary{display:inline-flex;align-items:center;justify-content:center;padding:.75rem 2rem;background:#E67635;color:#fff;font-weight:500;border-radius:.5rem;text-decoration:none}
-          .btn-outline{display:inline-flex;align-items:center;justify-content:center;padding:.75rem 2rem;border:2px solid #2B4C7E;color:#2B4C7E;font-weight:500;border-radius:.5rem;text-decoration:none}
-          main{flex:1}
-          section{position:relative}
+          body{margin:0;font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.75;color:#1f2933;background:#fff}
         `}} />
         {/* Google Tag Manager - 初期表示後に読み込み */}
         <Script
