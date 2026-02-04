@@ -2,7 +2,10 @@
 
 ## コミット・プッシュ用コマンド
 
-### 基本コマンド
+⚠️ **注意: gitコマンドはCoworkではなくローカルターミナルで実行すること**
+（Coworkから実行するとロックファイルが残りやすい）
+
+### 基本コマンド（ローカルターミナルで実行）
 ```bash
 git add .
 git commit -m "変更内容を簡潔に"
@@ -40,6 +43,23 @@ git push origin main
 ```
 
 2. Vercel連携により自動デプロイ（数分で反映）
+
+### リンク
+- GitHub: https://github.com/HayanoRyuki/corp-media-confidence
+- Vercel: https://vercel.com/hayano-ryukis-projects/corp-media-confidence/deployments
+
+---
+
+## トラブルシューティング
+
+### git lockエラーが出た場合
+```
+fatal: cannot lock ref 'HEAD': Unable to create '.../.git/HEAD.lock': File exists.
+```
+このエラーが出たら、lockファイルを削除：
+```bash
+rm /Users/hayanoryuki12/Local\ Sites/media-confidence/corporate/.git/HEAD.lock
+```
 
 ---
 

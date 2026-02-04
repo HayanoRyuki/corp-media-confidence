@@ -7,9 +7,10 @@ import { Footer } from "@/components/layout/Footer";
 
 const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "700"],  // 500を削除してダウンロードサイズ削減
   display: "swap",
-  preload: true,
+  preload: false,  // 日本語フォントはプリロードせず非同期読み込み
+  adjustFontFallback: true,  // システムフォントでCLS軽減
 });
 
 const GTM_ID = "GTM-M9GXZXKR";
@@ -43,10 +44,10 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <head>
-        {/* Google Tag Manager */}
+        {/* Google Tag Manager - 初期表示後に読み込み */}
         <Script
           id="gtm-script"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -57,10 +58,10 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* HubSpot Tracking Code */}
+        {/* HubSpot Tracking Code - 初期表示後に読み込み */}
         <Script
           id="hs-script-loader"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           src={`//js-na2.hs-scripts.com/${HUBSPOT_ID}.js`}
         />
       </head>
