@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-border">
-      <nav className="container-wide flex items-center justify-between py-4">
+      <nav className="container-wide flex items-center justify-between py-5">
         {/* ロゴ */}
         <Link href="/" className="flex items-center">
           <Image
@@ -25,7 +25,7 @@ export function Header() {
             alt="Media-Confidence"
             width={200}
             height={40}
-            className="h-8 w-auto"
+            className="h-10 w-auto"
             priority
           />
         </Link>
