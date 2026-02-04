@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { industries } from "@/data/industries";
 import { products } from "@/data/products";
 import { CTASection } from "@/components/sections/CTASection";
+import { PlatformComingSoonButton } from "@/components/ui/PlatformComingSoonModal";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -109,8 +110,6 @@ export default async function IndustryPage({ params }: Props) {
     benefits: [],
   };
 
-  const PLATFORM_URL = process.env.NEXT_PUBLIC_PLATFORM_URL || "https://platform.media-confidence.com";
-
   return (
     <>
       {/* ヒーロー */}
@@ -133,14 +132,9 @@ export default async function IndustryPage({ params }: Props) {
 
           {/* CTA */}
           <div className="flex gap-4 mt-8">
-            <a
-              href={PLATFORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary"
-            >
+            <PlatformComingSoonButton className="btn-primary">
               無料で始める
-            </a>
+            </PlatformComingSoonButton>
             <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-secondary">
               導入相談
             </Link>

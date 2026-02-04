@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { FileText, Users, Video, Plus } from "lucide-react";
+import { PlatformComingSoonButton } from "@/components/ui/PlatformComingSoonModal";
 
 export const metadata: Metadata = {
   title: "無料トライアル | MCメディアプラットフォーム",
   description: "MCメディアプラットフォームは、CMS・社員肖像管理・セミナー配信管理を無料でご利用いただける法人向けツールです。",
 };
-
-const PLATFORM_URL = process.env.NEXT_PUBLIC_PLATFORM_URL || "https://platform.media-confidence.com";
 
 const features = [
   {
@@ -66,14 +65,9 @@ export default function TrialPage() {
           <p className="text-xl text-white font-medium mb-8 max-w-2xl mx-auto">
             無料で使ってわかる、業務AIの価値。ぜひ、試してください。
           </p>
-          <a
-            href={PLATFORM_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary text-lg py-4 px-12 inline-block"
-          >
+          <PlatformComingSoonButton className="btn-primary text-lg py-4 px-12 inline-block">
             無料で始める
-          </a>
+          </PlatformComingSoonButton>
         </div>
       </section>
 
@@ -193,14 +187,9 @@ export default function TrialPage() {
             法人登録は数分で完了。クレジットカードは不要です。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={PLATFORM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-lg py-4 px-8"
-            >
+            <PlatformComingSoonButton className="btn-primary text-lg py-4 px-8">
               無料で始める
-            </a>
+            </PlatformComingSoonButton>
             <Link
               href="/contact"
               className="btn-outline border-white text-white hover:bg-white hover:text-secondary"

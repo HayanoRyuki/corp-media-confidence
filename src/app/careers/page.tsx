@@ -19,8 +19,6 @@ const careers = [
 ];
 
 export default function CareersListPage() {
-  const PLATFORM_URL = process.env.NEXT_PUBLIC_PLATFORM_URL || "https://platform.media-confidence.com";
-
   return (
     <>
       {/* ヒーロー */}
