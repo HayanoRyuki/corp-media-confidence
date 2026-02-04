@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-border">
-      <nav className="container-wide flex items-center justify-between py-5">
+      <nav className="container-wide flex items-center justify-between py-6">
         {/* ロゴ */}
         <Link href="/" className="flex items-center">
           <Image
@@ -45,10 +45,10 @@ export function Header() {
 
         {/* CTA ボタン */}
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/resources/overview" className="btn-outline text-sm py-2 px-4">
+          <Link href="/resources/overview" className="btn-outline text-sm py-2.5 px-5">
             資料請求
           </Link>
-          <Link href="/trial" className="btn-primary text-sm py-2 px-4">
+          <Link href="/trial" className="btn-primary text-sm py-2.5 px-5">
             無料で始める
           </Link>
         </div>
