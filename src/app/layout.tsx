@@ -55,12 +55,10 @@ export default function RootLayout({
           as="image"
           type="image/webp"
         />
-        {/* クリティカルCSS - 初期表示に必要な最小限のスタイル */}
+        {/* クリティカルCSS - 初期表示に必要な最小限のスタイル（Tailwindと競合しないよう最小限に） */}
         <style dangerouslySetInnerHTML={{ __html: `
           *,*::before,*::after{box-sizing:border-box}
-          body{margin:0;font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.75;color:#1f2933;background:#fff;display:flex;flex-direction:column;min-height:100vh}
-          .container-wide{max-width:80rem;margin:0 auto;padding:0 1rem}
-          main{flex:1}
+          body{margin:0}
         `}} />
         {/* Google Tag Manager - 初期表示後に読み込み */}
         <Script

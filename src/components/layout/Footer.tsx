@@ -39,7 +39,9 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-secondary text-white">
+    <footer className="bg-secondary text-white mt-0">
+      {/* 上部の区切り線（CTASectionとの視覚的分離） */}
+      <div className="border-t border-white/20"></div>
       <div className="container-wide py-12">
         {/* フッターリンク */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">

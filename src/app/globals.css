@@ -11,10 +11,18 @@
 
   body {
     @apply font-sans text-text bg-white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.75;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
+  }
+
+  main {
+    flex: 1;
   }
 }
 
@@ -82,4 +90,30 @@
 
 .legal-content a {
   @apply text-primary hover:underline;
+}
+
+/* ヘッダー・フッター固定スタイル（競合防止） */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+footer {
+  margin-top: auto;
+}
+
+footer .container-wide {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
