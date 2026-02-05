@@ -91,9 +91,9 @@ export default function TrialPage() {
               MCメディアプラットフォーム
             </h2>
             <p className="text-text-light max-w-2xl mx-auto">
-              メインプロダクト7つの本機能の一部から、お試ししやすい「メディア領域」を
+              メインプロダクトの本機能のうち、お試ししやすい一部メディア関連機能を、
               <br className="hidden md:block" />
-              無料体験可能なかたちでご提供しています。（お申し込み制）
+              「MCメディアプラットフォーム」という名称で、無料トライアル可能なかたちでご提供しています。
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
