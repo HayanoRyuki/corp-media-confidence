@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-border">
-      <nav className="container-wide flex items-center justify-between py-6">
+      <nav className="container-wide flex items-center justify-between py-8">
         {/* ロゴ */}
         <Link href="/" className="flex items-center">
           <Image
