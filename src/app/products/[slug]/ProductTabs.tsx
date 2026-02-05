@@ -26,210 +26,152 @@ export default function ProductTabs({ product, directions }: Props) {
   // タブの色を方向性ごとに設定
   const tabColors = {
     external: {
-      active: "bg-primary text-white",
-      inactive: "bg-primary/10 text-primary hover:bg-primary/20",
+      active: "bg-primary text-white border-primary",
+      inactive: "bg-white text-primary border-primary/30 hover:border-primary/50",
     },
     customer: {
-      active: "bg-secondary text-white",
-      inactive: "bg-secondary/10 text-secondary hover:bg-secondary/20",
+      active: "bg-secondary text-white border-secondary",
+      inactive: "bg-white text-secondary border-secondary/30 hover:border-secondary/50",
     },
     internal: {
-      active: "bg-emerald-600 text-white",
-      inactive: "bg-emerald-50 text-emerald-700 hover:bg-emerald-100",
+      active: "bg-emerald-600 text-white border-emerald-600",
+      inactive: "bg-white text-emerald-700 border-emerald-300 hover:border-emerald-400",
     },
   };
 
   return (
-    <>
+    <div>
       {/* タブナビゲーション */}
-      <section className="bg-gray-bg py-6 sticky top-0 z-10">
-        <div className="container-wide">
-          <div className="grid grid-cols-3 gap-3">
-            {product.tabs.map((tab) => {
-              const direction = directions.find((d) => d.id === tab.direction);
-              const isActive = activeTab === tab.direction;
-              const colors = tabColors[tab.direction];
-              return (
-                <button
-                  key={tab.direction}
-                  onClick={() => setActiveTab(tab.direction)}
-                  className={`py-4 px-4 rounded-lg font-medium transition-all text-center ${
-                    isActive ? colors.active : colors.inactive
-                  }`}
-                >
-                  <span className={`block text-xs mb-1 ${isActive ? "text-white/80" : ""}`}>
-                    {direction?.name}
-                  </span>
-                  <span className="block text-sm md:text-base">{tab.tabName}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <div className="grid grid-cols-3 gap-2 mb-6">
+        {product.tabs.map((tab) => {
+          const direction = directions.find((d) => d.id === tab.direction);
+          const isActive = activeTab === tab.direction;
+          const colors = tabColors[tab.direction];
+          return (
+            <button
+              key={tab.direction}
+              onClick={() => setActiveTab(tab.direction)}
+              className={`py-3 px-3 rounded-lg font-medium transition-all text-center border-2 ${
+                isActive ? colors.active : colors.inactive
+              }`}
+            >
+              <span className={`block text-xs mb-0.5 ${isActive ? "text-white/80" : ""}`}>
+                {direction?.name}
+              </span>
+              <span className="block text-sm">{tab.tabName}</span>
+            </button>
+          );
+        })}
+      </div>
 
       {/* タブコンテンツ */}
-      <TabContent content={currentTab} />
-    </>
+      <TabContentView content={currentTab} />
+    </div>
   );
 }
 
-function TabContent({ content }: { content: TabContent }) {
+function TabContentView({ content }: { content: TabContent }) {
   return (
-    <>
+    <div className="space-y-8">
       {/* リード文 */}
-      <section className="section">
-        <div className="container-wide">
-          <h2 className="text-2xl font-bold text-text mb-6">{content.tabName}について</h2>
-          <p className="text-text-light text-lg leading-relaxed max-w-4xl">
-            {content.about}
-          </p>
-        </div>
-      </section>
+      <div>
+        <h2 className="text-xl font-bold text-text mb-4">{content.tabName}について</h2>
+        <p className="text-text-light leading-relaxed">
+          {content.about}
+        </p>
+      </div>
 
       {/* 対象・目的 */}
-      <section className="section bg-gray-bg">
-        <div className="container-wide">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg p-8">
-              <h3 className="text-lg font-bold text-text mb-4 flex items-center gap-2">
-                <span className="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm">
-                  ✓
-                </span>
-                対象部署・担当者
-              </h3>
-              <p className="text-text-light">{content.targetDepartment}</p>
-            </div>
-            <div className="bg-white rounded-lg p-8">
-              <h3 className="text-lg font-bold text-text mb-4 flex items-center gap-2">
-                <span className="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm">
-                  ✓
-                </span>
-                導入目的
-              </h3>
-              <p className="text-text-light">{content.targetPurpose}</p>
-            </div>
-          </div>
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="bg-gray-bg rounded-lg p-5">
+          <h3 className="text-sm font-bold text-text mb-2 flex items-center gap-2">
+            <span className="w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xs">
+              ✓
+            </span>
+            対象部署・担当者
+          </h3>
+          <p className="text-text-light text-sm">{content.targetDepartment}</p>
         </div>
-      </section>
+        <div className="bg-gray-bg rounded-lg p-5">
+          <h3 className="text-sm font-bold text-text mb-2 flex items-center gap-2">
+            <span className="w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xs">
+              ✓
+            </span>
+            導入目的
+          </h3>
+          <p className="text-text-light text-sm">{content.targetPurpose}</p>
+        </div>
+      </div>
 
       {/* 応用・拡張例 */}
       {content.extensions.length > 0 && (
-        <section className="section">
-          <div className="container-wide">
-            <h2 className="text-2xl font-bold text-text mb-8">応用・拡張例</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {content.extensions.map((ext, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-4 p-6 bg-gray-bg rounded-lg"
-                >
-                  <span className="w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">
-                    {i + 1}
-                  </span>
-                  <p className="text-text">{ext}</p>
-                </div>
-              ))}
-            </div>
+        <div>
+          <h3 className="text-lg font-bold text-text mb-4">応用・拡張例</h3>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {content.extensions.map((ext, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 p-4 bg-gray-bg rounded-lg"
+              >
+                <span className="w-6 h-6 bg-secondary text-white rounded-full flex items-center justify-center text-xs font-bold shrink-0">
+                  {i + 1}
+                </span>
+                <p className="text-text text-sm">{ext}</p>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
       )}
 
       {/* 業界別の活用例 */}
       {content.industryExamples.length > 0 && (
-        <section className="section bg-gray-bg">
-          <div className="container-wide">
-            <h2 className="text-2xl font-bold text-text mb-8">業界別の活用例</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {content.industryExamples.map((example, i) => (
-                <div key={i} className="bg-white rounded-lg p-6">
-                  <h3 className="font-bold text-text mb-3">{example.title}</h3>
-                  <p className="text-text-light text-sm leading-relaxed">{example.description}</p>
-                </div>
-              ))}
-            </div>
+        <div>
+          <h3 className="text-lg font-bold text-text mb-4">業界別の活用例</h3>
+          <div className="space-y-3">
+            {content.industryExamples.map((example, i) => (
+              <div key={i} className="bg-gray-bg rounded-lg p-4">
+                <h4 className="font-bold text-text text-sm mb-2">{example.title}</h4>
+                <p className="text-text-light text-sm leading-relaxed">{example.description}</p>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
       )}
 
       {/* 提供の流れ */}
       {content.flow.length > 0 && (
-        <section className="section">
-          <div className="container-wide">
-            <h2 className="text-2xl font-bold text-text mb-8">提供の流れ</h2>
-            <div className="relative">
-              {/* 線（デスクトップ） */}
-              <div className="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gray-border" />
-
-              <div className="grid md:grid-cols-3 gap-8">
-                {content.flow.map((step, i) => (
-                  <div key={i} className="relative">
-                    <div className="flex md:flex-col items-start md:items-center gap-4 md:text-center">
-                      <span className="w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center text-xl font-bold shrink-0 relative z-10">
-                        {i + 1}
-                      </span>
-                      <div>
-                        <h3 className="font-bold text-text mb-2">{step.title}</h3>
-                        <p className="text-text-light text-sm">{step.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* 提供内容 */}
-      {content.deliverables.length > 0 && (
-        <section className="section bg-secondary text-white">
-          <div className="container-wide">
-            <h2 className="text-2xl font-bold mb-8">提供内容</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {content.deliverables.map((item, i) => (
-                <div key={i} className="bg-white/10 backdrop-blur rounded-lg p-6">
-                  <h3 className="font-bold mb-3">{item.title}</h3>
-                  <p className="text-white/80 text-sm leading-relaxed">{item.description}</p>
+        <div>
+          <h3 className="text-lg font-bold text-text mb-4">提供の流れ</h3>
+          <div className="space-y-4">
+            {content.flow.map((step, i) => (
+              <div key={i} className="flex items-start gap-4">
+                <span className="w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">
+                  {i + 1}
+                </span>
+                <div>
+                  <h4 className="font-bold text-text mb-1">{step.title}</h4>
+                  <p className="text-text-light text-sm">{step.description}</p>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
       )}
 
-      {/* FAQ */}
-      {content.faq.length > 0 && (
-        <section className="section">
-          <div className="container-wide">
-            <h2 className="text-2xl font-bold text-text mb-8">よくあるご質問</h2>
-            <div className="space-y-4 max-w-3xl">
-              {content.faq.map((item, i) => (
-                <details
-                  key={i}
-                  className="group bg-gray-bg rounded-lg"
-                >
-                  <summary className="flex items-center justify-between cursor-pointer p-6 font-medium text-text">
-                    <span className="flex items-center gap-3">
-                      <span className="text-primary font-bold">Q.</span>
-                      {item.question}
-                    </span>
-                    <span className="text-primary group-open:rotate-180 transition-transform">
-                      ▼
-                    </span>
-                  </summary>
-                  <div className="px-6 pb-6">
-                    <div className="flex gap-3 pt-4 border-t border-gray-border">
-                      <span className="text-secondary font-bold">A.</span>
-                      <p className="text-text-light">{item.answer}</p>
-                    </div>
-                  </div>
-                </details>
-              ))}
-            </div>
+      {/* 提供内容詳細 */}
+      {content.deliverables.length > 0 && (
+        <div className="bg-secondary rounded-lg p-6 text-white">
+          <h3 className="text-lg font-bold mb-4">提供内容詳細</h3>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {content.deliverables.map((item, i) => (
+              <div key={i} className="bg-white/10 backdrop-blur rounded-lg p-4">
+                <h4 className="font-bold mb-2 text-sm">{item.title}</h4>
+                <p className="text-white/80 text-xs leading-relaxed">{item.description}</p>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
       )}
-    </>
+    </div>
   );
 }

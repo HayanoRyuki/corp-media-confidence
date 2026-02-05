@@ -37,41 +37,113 @@ export default async function ProductPage({ params }: Props) {
     notFound();
   }
 
+  // 全タブの提供内容を集約
+  const allDeliverables = product.tabs.flatMap((tab) => tab.deliverables);
+  // 全タブのFAQを集約
+  const allFaq = product.tabs.flatMap((tab) => tab.faq);
+
   return (
     <>
-      {/* ヒーロー */}
-      <section className="bg-secondary py-16 md:py-24">
+      {/* パンくず */}
+      <section className="bg-gray-bg py-4">
         <div className="container-wide">
-          {/* パンくず */}
-          <nav className="text-sm text-white/60 mb-6">
-            <Link href="/" className="hover:text-white">ホーム</Link>
+          <nav className="text-sm text-text-light">
+            <Link href="/" className="hover:text-primary">ホーム</Link>
             <span className="mx-2">/</span>
-            <Link href="/product-list" className="hover:text-white">プロダクト一覧</Link>
+            <Link href="/product-list" className="hover:text-primary">プロダクト一覧</Link>
             <span className="mx-2">/</span>
-            <span className="text-white">{product.name}</span>
+            <span className="text-text">{product.name}</span>
           </nav>
+        </div>
+      </section>
 
-          {/* 部署タグ */}
-          <div className="flex gap-2 mb-4">
-            <span className="text-xs bg-white/20 text-white px-3 py-1 rounded-full">
-              {product.departmentName}部門向け
-            </span>
-          </div>
+      {/* 2カラムメインコンテンツ */}
+      <section className="section">
+        <div className="container-wide">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+            {/* 左カラム: プロダクト情報 */}
+            <div className="lg:col-span-2">
+              <div className="lg:sticky lg:top-24">
+                {/* 部署タグ */}
+                <div className="flex gap-2 mb-4">
+                  <span className="text-xs bg-secondary/10 text-secondary px-3 py-1 rounded-full font-medium">
+                    {product.departmentName}部門向け
+                  </span>
+                </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{product.name}</h1>
-          <p className="text-xl text-white/80 max-w-3xl">{product.summary}</p>
+                <h1 className="text-2xl md:text-3xl font-bold text-text mb-4">{product.name}</h1>
+                <p className="text-text-light leading-relaxed mb-8">{product.summary}</p>
 
-          {/* CTA */}
-          <div className="flex flex-wrap gap-4 mt-8">
-            <Link href="/resources/overview" className="btn-primary">
-              資料請求
-            </Link>
+                {/* 提供内容 */}
+                {allDeliverables.length > 0 && (
+                  <div className="mb-8">
+                    <h2 className="text-lg font-bold text-text mb-4">提供内容</h2>
+                    <div className="space-y-3">
+                      {allDeliverables.slice(0, 6).map((item, i) => (
+                        <div key={i} className="flex items-start gap-3">
+                          <span className="w-5 h-5 bg-primary text-white rounded-full flex items-center justify-center text-xs shrink-0 mt-0.5">✓</span>
+                          <div>
+                            <p className="font-medium text-text text-sm">{item.title}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* CTA */}
+                <div className="bg-gray-bg rounded-lg p-6">
+                  <p className="text-sm text-text-light mb-4">このプロダクトについて詳しく知りたい方は、お気軽にお問い合わせください。</p>
+                  <Link
+                    href={`/contact?product=${product.slug}`}
+                    className="btn-primary w-full text-center block"
+                  >
+                    このプロダクトについて問い合わせる
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* 右カラム: タブコンテンツ */}
+            <div className="lg:col-span-3">
+              <ProductTabs product={product} directions={directions} />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* タブコンテンツ */}
-      <ProductTabs product={product} directions={directions} />
+      {/* よくあるご質問（全幅） */}
+      {allFaq.length > 0 && (
+        <section className="section bg-gray-bg">
+          <div className="container-wide">
+            <h2 className="text-2xl font-bold text-text mb-8 text-center">よくあるご質問</h2>
+            <div className="space-y-4 max-w-3xl mx-auto">
+              {allFaq.map((item, i) => (
+                <details
+                  key={i}
+                  className="group bg-white rounded-lg"
+                >
+                  <summary className="flex items-center justify-between cursor-pointer p-6 font-medium text-text">
+                    <span className="flex items-center gap-3">
+                      <span className="text-primary font-bold">Q.</span>
+                      {item.question}
+                    </span>
+                    <span className="text-primary group-open:rotate-180 transition-transform">
+                      ▼
+                    </span>
+                  </summary>
+                  <div className="px-6 pb-6">
+                    <div className="flex gap-3 pt-4 border-t border-gray-border">
+                      <span className="text-secondary font-bold">A.</span>
+                      <p className="text-text-light">{item.answer}</p>
+                    </div>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <CTASection />
