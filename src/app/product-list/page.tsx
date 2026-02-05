@@ -1,7 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { products, directions } from "@/data/products";
 import { CTASection } from "@/components/sections/CTASection";
+
+const departmentImages: Record<string, string> = {
+  marketing: "/images/genre1.jpg",
+  design: "/images/genre2.jpg",
+  sales: "/images/genre3.jpg",
+  cs: "/images/genre8.jpg",
+  hr: "/images/genre4.jpg",
+  education: "/images/genre5.jpg",
+  planning: "/images/genre6.jpg",
+};
 
 export const metadata: Metadata = {
   title: "プロダクト一覧",
@@ -45,47 +56,47 @@ export default function ProductListPage() {
       <section className="section">
         <div className="container-wide">
           <h2 className="text-2xl font-bold text-text mb-8 text-center">7部門向けプロダクト</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {products.map((product) => (
               <Link
                 key={product.slug}
                 href={`/products/${product.slug}`}
-                className="group block bg-white border border-gray-border rounded-xl p-6 hover:shadow-lg hover:border-primary/30 transition-all"
+                className="group bg-white border border-gray-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
               >
-                {/* ヘッダー */}
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="w-12 h-12 bg-primary/10 text-primary rounded-lg flex items-center justify-center text-lg font-bold">
-                    {product.departmentName.charAt(0)}
-                  </span>
-                  <div>
-                    <span className="text-xs text-text-light uppercase tracking-wide">
-                      {product.departmentName}部門向け
-                    </span>
-                    <h3 className="font-bold text-text group-hover:text-primary transition-colors">
-                      {product.name}
-                    </h3>
+                {/* 写真エリア */}
+                <div className="aspect-[16/9] relative">
+                  <Image
+                    src={departmentImages[product.department] || "/images/genre1.jpg"}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 768px) 90vw, 450px"
+                    className="object-cover"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-secondary/90 via-secondary/40 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <p className="text-xs text-white/80 font-medium mb-1">
+                      {product.departmentName}
+                    </p>
+                    <h3 className="text-xl font-bold text-white">{product.name}</h3>
                   </div>
                 </div>
 
-                {/* サマリー */}
-                <p className="text-sm text-text-light mb-4 line-clamp-2">
-                  {product.summary}
-                </p>
-
-                {/* タブ名 */}
-                <div className="flex flex-wrap gap-2">
-                  {product.tabs.map((tab) => (
-                    <span
-                      key={tab.direction}
-                      className="text-xs bg-gray-bg text-text-light px-2 py-1 rounded"
-                    >
-                      {tab.tabName}
-                    </span>
-                  ))}
-                </div>
-
-                {/* 詳細リンク */}
-                <div className="mt-4 pt-4 border-t border-gray-border">
+                {/* テキストエリア */}
+                <div className="p-5">
+                  <p className="text-text-light text-sm mb-4 line-clamp-2">
+                    {product.summary}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {product.tabs.map((tab) => (
+                      <span
+                        key={tab.direction}
+                        className="text-xs bg-gray-bg text-text-light px-2 py-1 rounded"
+                      >
+                        {tab.tabName}
+                      </span>
+                    ))}
+                  </div>
                   <span className="text-sm text-primary font-medium group-hover:text-primary-dark flex items-center gap-1">
                     詳細を見る
                     <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
