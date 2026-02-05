@@ -81,21 +81,6 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
-
-      {/* すべての資料を見る */}
-      <section className="py-16 bg-gray-bg">
-        <div className="container-wide text-center">
-          <h2 className="text-2xl font-bold text-text mb-4">
-            資料をまとめてダウンロード
-          </h2>
-          <p className="text-text-light mb-8">
-            複数の資料をまとめてダウンロードできます
-          </p>
-          <Link href="/request" className="btn-primary">
-            資料請求フォームへ
-          </Link>
-        </div>
-      </section>
     </>
   );
 }
