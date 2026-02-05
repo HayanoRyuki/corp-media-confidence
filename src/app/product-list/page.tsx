@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { products, directions } from "@/data/products";
+import { products } from "@/data/products";
 import { CTASection } from "@/components/sections/CTASection";
 
 const departmentImages: Record<string, string> = {
@@ -33,22 +33,6 @@ export default function ProductListPage() {
             <br className="hidden md:block" />
             各プロダクトは社外向け・顧客向け・社内向けの3つの用途に対応しています。
           </p>
-        </div>
-      </section>
-
-      {/* 方向性の説明 */}
-      <section className="py-12 bg-gray-bg">
-        <div className="container-wide">
-          <h2 className="text-lg font-bold text-text mb-6 text-center">3つの方向性</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {directions.map((dir) => (
-              <div key={dir.id} className="bg-white rounded-lg p-6">
-                <p className="text-sm text-primary font-medium uppercase mb-1">{dir.nameEn}</p>
-                <h3 className="text-lg font-bold text-text mb-2">{dir.name}</h3>
-                <p className="text-sm text-text-light">{dir.desc}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
