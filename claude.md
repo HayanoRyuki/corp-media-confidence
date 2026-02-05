@@ -7,9 +7,12 @@
 
 ### 基本コマンド（ローカルターミナルで実行）
 ```bash
-git add .
-git commit -m "変更内容を簡潔に"
-git push
+cd ~/Local\ Sites/media-confidence/corporate && git add -A && git commit -m "変更内容を簡潔に" && git push
+```
+
+### プロジェクトパス
+```
+/Users/hayanoryuki12/Local Sites/media-confidence/corporate
 ```
 
 ### よく使うコミットメッセージ例

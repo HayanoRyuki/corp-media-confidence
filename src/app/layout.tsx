@@ -17,6 +17,7 @@ const GTM_ID = "GTM-M9GXZXKR";
 const HUBSPOT_ID = "21612534";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://media-confidence.com"),
   title: {
     default: "株式会社メディア・コンフィデンス",
     template: "%s | 株式会社メディア・コンフィデンス",
@@ -25,10 +26,13 @@ export const metadata: Metadata = {
     "7部署×3方向で選べる21種類のAIプロダクト。業種別の導入パターンもあります。まずは、御社に合う使い方を探してみませんか。",
   keywords: ["AI", "業務効率化", "マーケティング", "営業支援", "カスタマーサポート"],
   authors: [{ name: "株式会社メディア・コンフィデンス" }],
+  alternates: {
+    canonical: "./",
+  },
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    url: process.env.NEXT_PUBLIC_SITE_URL,
+    url: "https://media-confidence.com",
     siteName: "株式会社メディア・コンフィデンス",
   },
   twitter: {

@@ -43,10 +43,12 @@ const nextConfig = {
       },
     ];
   },
+  // 末尾スラッシュを自動リダイレクト
+  trailingSlash: false,
   // リダイレクト（HubSpotからの移行用）
   async redirects() {
     return [
-      // 旧URLから新URLへのリダイレクト例
+      // 旧URLから新URLへのリダイレクト
       {
         source: "/product/:slug",
         destination: "/products/:slug",
@@ -60,6 +62,40 @@ const nextConfig = {
       {
         source: "/products",
         destination: "/product-list",
+        permanent: true,
+      },
+      // HubSpot時代のURL対応
+      {
+        source: "/privacy-policy",
+        destination: "/privacy",
+        permanent: true,
+      },
+      // 旧プロダクトURL形式（部署-方向）から新形式へ
+      {
+        source: "/products/:dept(marketing|design|sales|cs|hr|education|planning)-customer",
+        destination: "/products/:dept",
+        permanent: true,
+      },
+      {
+        source: "/products/:dept(marketing|design|sales|cs|hr|education|planning)-external",
+        destination: "/products/:dept",
+        permanent: true,
+      },
+      {
+        source: "/products/:dept(marketing|design|sales|cs|hr|education|planning)-internal",
+        destination: "/products/:dept",
+        permanent: true,
+      },
+      // hsLang パラメータ付きURLの処理
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "query",
+            key: "hsLang",
+          },
+        ],
+        destination: "/:path*",
         permanent: true,
       },
     ];
