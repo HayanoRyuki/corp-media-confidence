@@ -23,27 +23,44 @@ export default function ProductTabs({ product, directions }: Props) {
 
   if (!currentTab) return null;
 
+  // タブの色を方向性ごとに設定
+  const tabColors = {
+    external: {
+      active: "bg-primary text-white",
+      inactive: "bg-primary/10 text-primary hover:bg-primary/20",
+    },
+    customer: {
+      active: "bg-secondary text-white",
+      inactive: "bg-secondary/10 text-secondary hover:bg-secondary/20",
+    },
+    internal: {
+      active: "bg-emerald-600 text-white",
+      inactive: "bg-emerald-50 text-emerald-700 hover:bg-emerald-100",
+    },
+  };
+
   return (
     <>
       {/* タブナビゲーション */}
-      <section className="bg-white border-b border-gray-border sticky top-0 z-10">
+      <section className="bg-gray-bg py-6 sticky top-0 z-10">
         <div className="container-wide">
-          <div className="flex gap-0 overflow-x-auto">
+          <div className="grid grid-cols-3 gap-3">
             {product.tabs.map((tab) => {
               const direction = directions.find((d) => d.id === tab.direction);
               const isActive = activeTab === tab.direction;
+              const colors = tabColors[tab.direction];
               return (
                 <button
                   key={tab.direction}
                   onClick={() => setActiveTab(tab.direction)}
-                  className={`px-6 py-4 text-sm font-medium whitespace-nowrap border-b-2 transition-colors ${
-                    isActive
-                      ? "border-primary text-primary bg-primary/5"
-                      : "border-transparent text-text-light hover:text-text hover:bg-gray-50"
+                  className={`py-4 px-4 rounded-lg font-medium transition-all text-center ${
+                    isActive ? colors.active : colors.inactive
                   }`}
                 >
-                  <span className="block text-xs text-text-light mb-1">{direction?.name}</span>
-                  <span className="block">{tab.tabName}</span>
+                  <span className={`block text-xs mb-1 ${isActive ? "text-white/80" : ""}`}>
+                    {direction?.name}
+                  </span>
+                  <span className="block text-sm md:text-base">{tab.tabName}</span>
                 </button>
               );
             })}

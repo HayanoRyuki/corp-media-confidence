@@ -28,11 +28,9 @@ export function HeroSection() {
 
           {/* サブコピー */}
           <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
-            7部署×3方向で選べる21種類のAIプロダクト。
+            部署ごとに選べる最適なAI運用基盤を提供。
             <br />
-            業種別の導入パターンもあります。
-            <br />
-            まずは、御社に合う使い方を探してみませんか。
+            業種別の導入パターンをもとに、ベストな使い方を探してみませんか。
           </p>
 
           {/* CTA ボタン */}
