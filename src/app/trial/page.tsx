@@ -136,7 +136,7 @@ export default function TrialPage() {
       <section className="section bg-gray-bg">
         <div className="container-narrow">
           <h2 className="text-2xl font-bold text-text text-center mb-8">
-            無料利用について
+            MCメディアプラットフォーム利用について
           </h2>
           <div className="bg-white rounded-lg p-8">
             <ul className="space-y-4">
@@ -150,7 +150,7 @@ export default function TrialPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold">✓</span>
-                <span className="text-text-light">一部の拡張機能・大容量利用は有料プランをご用意</span>
+                <span className="text-text-light">機能・容量に制限があります。メインプロダクトの契約でフル提供が可能となります。</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-primary font-bold">✓</span>
