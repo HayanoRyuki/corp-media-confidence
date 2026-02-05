@@ -27,7 +27,7 @@ export default function CaseStudiesResourcePage() {
       </section>
 
       {/* コンテンツ */}
-      <section className="section">
+      <section className="section pb-24">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* 資料表紙 */}

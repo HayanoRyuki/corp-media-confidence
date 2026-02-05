@@ -27,7 +27,7 @@ export default function OverviewResourcePage() {
       </section>
 
       {/* コンテンツ */}
-      <section className="section">
+      <section className="section pb-24">
         <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* 資料表紙 */}
@@ -50,7 +50,7 @@ export default function OverviewResourcePage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary">✓</span>
-                    7部署×3方向の21種類AIプロダクト一覧
+                    7部署向けAIプロダクト一覧
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary">✓</span>
