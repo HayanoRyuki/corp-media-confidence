@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { industries } from "@/data/industries";
-import { products } from "@/data/products";
+import { products, getProductBySlug } from "@/data/products";
 import { CTASection } from "@/components/sections/CTASection";
 import { PlatformComingSoonButton } from "@/components/ui/PlatformComingSoonModal";
 
@@ -102,7 +102,7 @@ export default async function IndustryPage({ params }: Props) {
   }
 
   const recommendedProducts = industry.recommendedProducts
-    .map((slug) => Object.values(products).find((p) => p.slug === slug))
+    .map((productSlug) => getProductBySlug(productSlug))
     .filter(Boolean);
 
   const details = industryDetails[slug] || {
@@ -200,14 +200,26 @@ export default async function IndustryPage({ params }: Props) {
                 href={`/products/${product!.slug}`}
                 className="block bg-white rounded-lg p-6 hover:shadow-lg transition-shadow"
               >
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-xs bg-primary/10 text-primary px-2 py-1 rounded">
+                    {product!.departmentName}
+                  </span>
+                </div>
                 <h3 className="font-bold text-primary mb-2">{product!.name}</h3>
-                <p className="text-sm text-text-light">{product!.summary}</p>
+                <p className="text-sm text-text-light mb-3">{product!.summary}</p>
+                <div className="flex flex-wrap gap-1">
+                  {product!.tabs.map((tab) => (
+                    <span key={tab.direction} className="text-xs text-text-light">
+                      {tab.tabName}
+                    </span>
+                  )).reduce((prev, curr, i) => i === 0 ? [curr] : [...prev, <span key={`sep-${i}`} className="text-xs text-text-light">・</span>, curr], [] as React.ReactNode[])}
+                </div>
               </Link>
             ))}
           </div>
           <div className="text-center mt-8">
             <Link href="/product-list" className="text-primary hover:text-primary-dark font-medium">
-              全21プロダクトを見る →
+              全7プロダクトを見る →
             </Link>
           </div>
         </div>

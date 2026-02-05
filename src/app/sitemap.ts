@@ -142,8 +142,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // プロダクト詳細ページ（動的）
-  const productPages: MetadataRoute.Sitemap = Object.values(products).map(
+  // プロダクト詳細ページ（動的）- 7プロダクト
+  const productPages: MetadataRoute.Sitemap = products.map(
     (product) => ({
       url: `${BASE_URL}/products/${product.slug}`,
       lastModified: currentDate,
