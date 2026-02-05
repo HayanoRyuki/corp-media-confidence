@@ -138,26 +138,6 @@ function TabContentView({ content }: { content: TabContent }) {
         </div>
       )}
 
-      {/* 提供の流れ */}
-      {content.flow.length > 0 && (
-        <div>
-          <h3 className="text-lg font-bold text-text mb-4">提供の流れ</h3>
-          <div className="space-y-4">
-            {content.flow.map((step, i) => (
-              <div key={i} className="flex items-start gap-4">
-                <span className="w-10 h-10 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">
-                  {i + 1}
-                </span>
-                <div>
-                  <h4 className="font-bold text-text mb-1">{step.title}</h4>
-                  <p className="text-text-light text-sm">{step.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
       {/* 提供内容詳細 */}
       {content.deliverables.length > 0 && (
         <div className="bg-secondary rounded-lg p-6 text-white">
