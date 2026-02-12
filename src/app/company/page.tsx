@@ -4,6 +4,10 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "会社概要",
   description: "株式会社メディア・コンフィデンスの会社概要。AIを一時的な「試行」で終わらせないために、業務や事業の中に深く根を張り、使い続けられる「仕組み」を提供しています。",
+  openGraph: {
+    title: "会社概要",
+    description: "株式会社メディア・コンフィデンスの会社概要。AIを一時的な「試行」で終わらせないために、業務や事業の中に深く根を張り、使い続けられる「仕組み」を提供しています。",
+  },
 };
 
 const companyInfo = {

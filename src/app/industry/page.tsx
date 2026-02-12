@@ -14,6 +14,10 @@ import {
 export const metadata: Metadata = {
   title: "業種別ソリューション",
   description: "無形商材を扱うビジネスには、共通する課題があります。業種ごとに最適なプロダクトの組み合わせをご提案します。",
+  openGraph: {
+    title: "業種別ソリューション",
+    description: "無形商材を扱うビジネスには、共通する課題があります。業種ごとに最適なプロダクトの組み合わせをご提案します。",
+  },
 };
 
 const industryIcons: Record<string, React.ReactNode> = {

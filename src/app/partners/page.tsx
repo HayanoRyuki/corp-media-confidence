@@ -5,6 +5,10 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "パートナー",
   description: "株式会社メディア・コンフィデンスのパートナー企業一覧",
+  openGraph: {
+    title: "パートナー",
+    description: "株式会社メディア・コンフィデンスのパートナー企業一覧",
+  },
 };
 
 // サンプルデータ（将来的にCMSから取得）

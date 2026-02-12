@@ -4,6 +4,10 @@ import { RequestForm } from "@/components/ui/RequestForm";
 export const metadata: Metadata = {
   title: "資料請求",
   description: "株式会社メディア・コンフィデンスの資料請求ページ。AIシステム基盤の概要資料、導入事例集などをダウンロードいただけます。",
+  openGraph: {
+    title: "資料請求",
+    description: "株式会社メディア・コンフィデンスの資料請求ページ。AIシステム基盤の概要資料、導入事例集などをダウンロードいただけます。",
+  },
 };
 
 export default function RequestPage() {

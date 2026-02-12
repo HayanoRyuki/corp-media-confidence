@@ -7,6 +7,10 @@ import { PlatformComingSoonButton } from "@/components/ui/PlatformComingSoonModa
 export const metadata: Metadata = {
   title: "無料トライアル | MCメディアプラットフォーム",
   description: "MCメディアプラットフォームは、CMS・社員肖像管理・セミナー配信管理を無料でご利用いただける法人向けツールです。",
+  openGraph: {
+    title: "無料トライアル | MCメディアプラットフォーム",
+    description: "MCメディアプラットフォームは、CMS・社員肖像管理・セミナー配信管理を無料でご利用いただける法人向けツールです。",
+  },
 };
 
 const features = [

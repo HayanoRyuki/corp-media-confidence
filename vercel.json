@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.media-confidence.com"
+        }
+      ],
+      "destination": "https://media-confidence.com/:path*",
+      "permanent": true
+    }
+  ]
+}

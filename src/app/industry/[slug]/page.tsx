@@ -27,6 +27,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${industry.name}向けソリューション`,
     description: `${industry.name}のお客様向けにおすすめのAIプロダクトをご紹介します。${industry.desc}`,
+    openGraph: {
+      title: `${industry.name}向けソリューション`,
+      description: `${industry.name}のお客様向けにおすすめのAIプロダクトをご紹介します。${industry.desc}`,
+    },
   };
 }
 

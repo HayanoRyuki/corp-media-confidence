@@ -17,6 +17,10 @@ const departmentImages: Record<string, string> = {
 export const metadata: Metadata = {
   title: "プロダクト一覧",
   description: "7部門向けのAIプロダクト。御社の課題に最適なソリューションをお選びください。",
+  openGraph: {
+    title: "プロダクト一覧",
+    description: "7部門向けのAIプロダクト。御社の課題に最適なソリューションをお選びください。",
+  },
 };
 
 export default function ProductListPage() {

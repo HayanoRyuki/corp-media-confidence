@@ -5,6 +5,10 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "導入実績",
   description: "AIシステム基盤の導入事例をご紹介。各業界でのAI活用の成功事例をご覧ください。",
+  openGraph: {
+    title: "導入実績",
+    description: "AIシステム基盤の導入事例をご紹介。各業界でのAI活用の成功事例をご覧ください。",
+  },
 };
 
 // サンプルデータ（将来的にCMSから取得）

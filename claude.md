@@ -77,3 +77,17 @@ rm /Users/hayanoryuki12/Local\ Sites/media-confidence/corporate/.git/HEAD.lock
 - `src/app/sitemap.ts` 作成
 - `src/app/robots.ts` 作成
 - Search Console: URLプレフィックスで登録済み
+
+---
+
+## ⚠️ Claude への注意事項
+
+### 絶対ルール
+1. **パスは絶対に省略・推測しない** - 必ず claude.md に記載されたパスをそのまま使う
+2. **デプロイコマンドは基本コマンドをそのままコピー** - 勝手に短縮しない
+3. **不明な情報は勝手に補完せず、ユーザーに確認する**
+
+### コマンド提示時のチェックリスト
+- [ ] プロジェクトパスは `~/Local\ Sites/media-confidence/corporate` になっているか？
+- [ ] 勝手にパスを省略していないか？
+- [ ] claude.md の基本コマンドをベースにしているか？

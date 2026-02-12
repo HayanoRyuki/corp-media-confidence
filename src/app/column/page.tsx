@@ -5,6 +5,10 @@ import { columns } from "@/data/columns";
 export const metadata: Metadata = {
   title: "コラム",
   description: "AI活用、業務効率化、マーケティングに関する専門知識やノウハウをお届けします",
+  openGraph: {
+    title: "コラム",
+    description: "AI活用、業務効率化、マーケティングに関する専門知識やノウハウをお届けします",
+  },
 };
 
 export default function ColumnListPage() {

@@ -4,6 +4,10 @@ import { ContactForm } from "@/components/ui/ContactForm";
 export const metadata: Metadata = {
   title: "お問い合わせ",
   description: "株式会社メディア・コンフィデンスへのお問い合わせはこちらから。サービスに関するご質問、導入のご相談など、お気軽にお問い合わせください。",
+  openGraph: {
+    title: "お問い合わせ",
+    description: "株式会社メディア・コンフィデンスへのお問い合わせはこちらから。サービスに関するご質問、導入のご相談など、お気軽にお問い合わせください。",
+  },
 };
 
 export default function ContactPage() {

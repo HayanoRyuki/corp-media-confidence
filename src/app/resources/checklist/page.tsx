@@ -6,6 +6,10 @@ import { HubSpotForm } from "@/components/ui/HubSpotForm";
 export const metadata: Metadata = {
   title: "AI基盤導入・運用 検討チェックリスト",
   description: "AIを「試す」のではなく「使い続ける」ために、事前に整理しておきたい検討ポイントをまとめています。",
+  openGraph: {
+    title: "AI基盤導入・運用 検討チェックリスト",
+    description: "AIを「試す」のではなく「使い続ける」ために、事前に整理しておきたい検討ポイントをまとめています。",
+  },
 };
 
 export default function ChecklistResourcePage() {

@@ -4,6 +4,10 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "チーム",
   description: "株式会社メディア・コンフィデンスのチームメンバー紹介",
+  openGraph: {
+    title: "チーム",
+    description: "株式会社メディア・コンフィデンスのチームメンバー紹介",
+  },
 };
 
 // サンプルデータ（将来的にCMSから取得）

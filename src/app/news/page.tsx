@@ -5,6 +5,10 @@ import { news } from "@/data/news";
 export const metadata: Metadata = {
   title: "ニュース",
   description: "株式会社メディア・コンフィデンスからのお知らせ、プレスリリース",
+  openGraph: {
+    title: "ニュース",
+    description: "株式会社メディア・コンフィデンスからのお知らせ、プレスリリース",
+  },
 };
 
 export default function NewsListPage() {

@@ -34,9 +34,25 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     url: "https://media-confidence.com",
     siteName: "株式会社メディア・コンフィデンス",
+    title: "株式会社メディア・コンフィデンス",
+    description:
+      "7部署×3方向で選べる21種類のAIプロダクト。業種別の導入パターンもあります。まずは、御社に合う使い方を探してみませんか。",
+    images: [
+      {
+        url: "https://media-confidence.com/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "株式会社メディア・コンフィデンス",
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
+    title: "株式会社メディア・コンフィデンス",
+    description:
+      "7部署×3方向で選べる21種類のAIプロダクト。業種別の導入パターンもあります。まずは、御社に合う使い方を探してみませんか。",
+    images: ["https://media-confidence.com/images/og-image.png"],
   },
 };
 

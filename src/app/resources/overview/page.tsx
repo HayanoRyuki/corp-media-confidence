@@ -6,6 +6,10 @@ import { HubSpotForm } from "@/components/ui/HubSpotForm";
 export const metadata: Metadata = {
   title: "管理付きAIシステム基盤 概要資料",
   description: "メディア・コンフィデンスが提供するAWS×AIを軸とした「管理付きAIシステム基盤」の全体像をまとめた資料です。",
+  openGraph: {
+    title: "管理付きAIシステム基盤 概要資料",
+    description: "メディア・コンフィデンスが提供するAWS×AIを軸とした「管理付きAIシステム基盤」の全体像をまとめた資料です。",
+  },
 };
 
 export default function OverviewResourcePage() {

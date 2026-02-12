@@ -4,6 +4,10 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "採用情報",
   description: "株式会社メディア・コンフィデンスの採用情報。業務委託メンバーを募集しています。",
+  openGraph: {
+    title: "採用情報",
+    description: "株式会社メディア・コンフィデンスの採用情報。業務委託メンバーを募集しています。",
+  },
 };
 
 // 業務委託ポジション

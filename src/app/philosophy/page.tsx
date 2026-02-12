@@ -4,6 +4,10 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "Philosophy | 企業理念",
   description: "株式会社メディア・コンフィデンスの企業理念。「善く創る、善く伝える。」出版制作から始まり、メディア、動画、そしてAIへ。扱う技術は変わっても、この姿勢は創業から一貫しています。",
+  openGraph: {
+    title: "Philosophy | 企業理念",
+    description: "株式会社メディア・コンフィデンスの企業理念。「善く創る、善く伝える。」出版制作から始まり、メディア、動画、そしてAIへ。扱う技術は変わっても、この姿勢は創業から一貫しています。",
+  },
 };
 
 const historyData = [

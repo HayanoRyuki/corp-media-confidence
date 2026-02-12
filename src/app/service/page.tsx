@@ -5,6 +5,10 @@ import { Monitor, Cpu, Users } from "lucide-react";
 export const metadata: Metadata = {
   title: "事業内容",
   description: "メディア・コンフィデンスの事業内容。無料ツール提供、AIシステム基盤開発、大型開発・PMO支援の3つの事業を展開しています。",
+  openGraph: {
+    title: "事業内容",
+    description: "メディア・コンフィデンスの事業内容。無料ツール提供、AIシステム基盤開発、大型開発・PMO支援の3つの事業を展開しています。",
+  },
 };
 
 const services = [

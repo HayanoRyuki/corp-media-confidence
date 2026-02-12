@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
   description: "株式会社メディア・コンフィデンスのプライバシーポリシー（個人情報保護方針）",
+  openGraph: {
+    title: "プライバシーポリシー",
+    description: "株式会社メディア・コンフィデンスのプライバシーポリシー（個人情報保護方針）",
+  },
 };
 
 export default function PrivacyPage() {

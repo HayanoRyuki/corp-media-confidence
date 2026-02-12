@@ -69,6 +69,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${career.title} | 採用情報`,
     description: `${career.title}の募集要項。${career.employmentType}・${career.location}・${career.workStyle}`,
+    openGraph: {
+      title: `${career.title} | 採用情報`,
+      description: `${career.title}の募集要項。${career.employmentType}・${career.location}・${career.workStyle}`,
+    },
   };
 }
 

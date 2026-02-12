@@ -6,6 +6,10 @@ import { HubSpotForm } from "@/components/ui/HubSpotForm";
 export const metadata: Metadata = {
   title: "業務に組み込まれるAI基盤 活用事例集",
   description: "マーケティング、採用、CSなどの業務で、AIシステム基盤がどのように使われているかを紹介します。",
+  openGraph: {
+    title: "業務に組み込まれるAI基盤 活用事例集",
+    description: "マーケティング、採用、CSなどの業務で、AIシステム基盤がどのように使われているかを紹介します。",
+  },
 };
 
 export default function CaseStudiesResourcePage() {

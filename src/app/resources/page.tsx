@@ -5,6 +5,10 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "資料一覧",
   description: "AIシステム基盤の概要資料、導入事例集、チェックリストなどをダウンロードいただけます",
+  openGraph: {
+    title: "資料一覧",
+    description: "AIシステム基盤の概要資料、導入事例集、チェックリストなどをダウンロードいただけます",
+  },
 };
 
 // 資料データ

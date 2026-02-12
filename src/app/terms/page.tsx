@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "利用規約",
   description: "株式会社メディア・コンフィデンスのサービス利用規約",
+  openGraph: {
+    title: "利用規約",
+    description: "株式会社メディア・コンフィデンスのサービス利用規約",
+  },
 };
 
 export default function TermsPage() {

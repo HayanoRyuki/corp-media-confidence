@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "セミナー・イベント",
   description: "AI活用、業務効率化に関するウェビナー・セミナー情報。オンラインで参加可能です。",
+  openGraph: {
+    title: "セミナー・イベント",
+    description: "AI活用、業務効率化に関するウェビナー・セミナー情報。オンラインで参加可能です。",
+  },
 };
 
 // サンプルデータ（将来的にCMSから取得）
