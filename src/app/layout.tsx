@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | 株式会社メディア・コンフィデンス",
   },
   description:
-    "7部署×3方向で選べる21種類のAIプロダクト。業種別の導入パターンもあります。まずは、御社に合う使い方を探してみませんか。",
+    "その業務、AI基盤で「すぐ」変えてみせます。部署ごとに選べる最適なAI運用基盤を提供。業種別の導入パターンをもとに、ベストな使い方を探してみませんか。",
   keywords: ["AI", "業務効率化", "マーケティング", "営業支援", "カスタマーサポート"],
   authors: [{ name: "株式会社メディア・コンフィデンス" }],
   alternates: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "株式会社メディア・コンフィデンス",
     title: "株式会社メディア・コンフィデンス",
     description:
-      "7部署×3方向で選べる21種類のAIプロダクト。業種別の導入パターンもあります。まずは、御社に合う使い方を探してみませんか。",
+      "その業務、AI基盤で「すぐ」変えてみせます。部署ごとに選べる最適なAI運用基盤を提供。業種別の導入パターンをもとに、ベストな使い方を探してみませんか。",
     images: [
       {
         url: "https://media-confidence.com/images/og-image.png",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "株式会社メディア・コンフィデンス",
     description:
-      "7部署×3方向で選べる21種類のAIプロダクト。業種別の導入パターンもあります。まずは、御社に合う使い方を探してみませんか。",
+      "その業務、AI基盤で「すぐ」変えてみせます。部署ごとに選べる最適なAI運用基盤を提供。業種別の導入パターンをもとに、ベストな使い方を探してみませんか。",
     images: ["https://media-confidence.com/images/og-image.png"],
   },
 };
